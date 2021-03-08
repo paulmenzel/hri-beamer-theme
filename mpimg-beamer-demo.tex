@@ -1,17 +1,20 @@
 %!TEX program = xelatex
 
-% Name           : hsrm-beamer-demo.sty
-% Author         : Benjamin Weiss (benjamin.weiss@kreatiefton.de)
-% Version        : 0.4
+% Name           : mpimg-beamer-demo.sty
+% Author         : Martin Ballaschk (ballaschk@molgen.mpg.de)
+%                  based on a theme by Benjamin Weiss (benjamin.weiss@kreatiefton.de)
+% Version        : 0.1.1
 % Created on     : 05.05.2013
-% Last Edited on : 24.03.2014
-% Copyright      : Copyright (c) 2013-2014 by Benjamin Weiss. All rights reserved.
+% Last Edited on : 08.03.2021
+% Copyright      : Copyright (c) 2013-2014 by Benjamin Weiss. All rights reserved. 
 % License        : This file may be distributed and/or modified under the
 %                  GNU Public License.
-% Description    : HSRM beamer theme demonstration. Also includes a short 
+% Description    : MPIMG beamer theme demonstration. Also includes a short 
 %                  Tutorial regarding the beamer class.
 
-\documentclass[compress]{beamer}
+\documentclass[compress%
+,aspectratio=169% uncomment for 3:4 slides
+]{beamer}
 %--------------------------------------------------------------------------
 % Common packages
 %--------------------------------------------------------------------------
@@ -47,20 +50,20 @@ xrightmargin=0.5em
 %--------------------------------------------------------------------------
 % Load theme
 %--------------------------------------------------------------------------
-\usetheme{hsrm}
+\usetheme{mpimg}
 
-\usepackage{dtklogos} % must be loaded after theme
+% \usepackage{dtklogos} % must be loaded after theme
 \usepackage{tikz}
 \usetikzlibrary{mindmap,backgrounds}
 
 %--------------------------------------------------------------------------
 % General presentation settings
 %--------------------------------------------------------------------------
-\title{HSRM Beamer Theme}
+\title{MPIMG Beamer Theme}
 \subtitle{Demonstration und kurze Einführung in Beamer}
 \date{Letztes Update: \today}
-\author{Benjamin Weiss}
-\institute{Studienbereich Informations- und Elektrotechnik\\Hochschule {\Medium RheinMain}}
+\author{Mus Musculus}
+\institute{Max-Planck-Institut für molekulare Genetik}
 
 %--------------------------------------------------------------------------
 % Notes settings
@@ -93,9 +96,7 @@ xrightmargin=0.5em
 \section{Einleitung}
 
 \begin{frame}{Was ist Beamer?}
-	Die Beamer Klassen für \LaTeX\ dienen zur Erstellung von Präsentationen, welche mit einem Beamer vorgeführt werden sollen. Das Textsatzsystem erzeugt dazu PDF Dateien, die von einer großen Anzahl an Programmen gezeigt werden können.
-	
-	Das hier vorgestellte Theme für Beamer macht die Erstellung von Folien entsprechend dem Corporate Design der Hochschule {\Medium RheinMain} (Grundkenntnisse in \LaTeX\ vorausgesetzt) zu einem Kinderspiel.
+	Die Beamer Klassen für \LaTeX\ dienen zur Erstellung von Präsentationen, welche mit einem Projektor vorgeführt werden sollen. Das Textsatzsystem erzeugt dazu PDF Dateien, die von einer großen Anzahl an Programmen gezeigt werden können.
 \end{frame}
 
 \begin{frame}{Systemvoraussetzungen}
@@ -103,7 +104,6 @@ xrightmargin=0.5em
 	\begin{itemize}
 		\item Zum Setzen der Folien muss XeTeX verwendet werden.
 		\item Neben einigen Standardpaketen müssen die Pakete \texttt{beamer}, \texttt{pgf} und \texttt{xcolor} installiert sein.
-		\item Die Schriften \quoted{Flama-Light}, \quoted{Flama-Book} und \quoted{Flama-Medium} sollten installiert sein. Alternativ: \quoted{Arial}\\\url{http://www.felicianotypefoundry.com/}
 	\end{itemize}
 \end{frame}
 
@@ -113,12 +113,12 @@ Der Grundaufbau ist einfach:
 \begin{lstlisting}
 \documentclass[compress]{beamer}
 % Theme laden
-\usetheme{hsrm}
+\usetheme{mpimg}
 % Allgemeine Präsentationseinstellungen 
 \title{Titel der Präsentation}
 \subtitle{Untertitel der Präsentation}
 \author{Ihr Name}
-\institute{Studienbereich\\Hochschule {\Medium RheinMain}}
+\institute{Max-Planck-Institut für molekulare Genetik}
 \begin{document}
 % Folien
 \end{document}
@@ -132,7 +132,6 @@ Um die Darstellung der Präsentation anzupassen können die folgenden Optionen g
 		\toprule
 		\textbf{Option}			& \textbf{Auswirkung} \tabularnewline
 		\midrule
-		\texttt{noflama}		& Falls Sie die Schrift Flama nicht besitzen können Sie mit dieser Option auf die Schrift Arial umschalten. \tabularnewline
 		\texttt{noserifmath}		& Formeln werden ebenfalls serifenlos gesetzt. \tabularnewline
 		\texttt{nosectionpages} & Die Sektionseinleitungsseiten werden ausgeblendet.\tabularnewline
 		\bottomrule
@@ -141,155 +140,94 @@ Um die Darstellung der Präsentation anzupassen können die folgenden Optionen g
 \end{table}
 \end{frame}
 
-\begin{frame}{Primärfarben}									
-Alle Farben des Corporate Designs sind im Template hinterlegt.
+\begin{frame}{Primär- und Sekundärfarben}									
+Alle Farben des Max-Planck-Corporate Designs von 2020 sind im Template hinterlegt.
 
 
 \begin{multicols}{2}
 
-\setbeamercolor{hsrmRedDemo}{fg=hsrmRed,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmRedDemo}
-	\texttt{hsrmRed}
+\setbeamercolor{mpgGreen}{fg=mpgGreen,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreenDemo}
+	\texttt{mpgGreen}
 \end{beamercolorbox}
-\setbeamercolor{hsrmRedDarkDemo}{fg=hsrmRedDark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmRedDarkDemo}
-	\texttt{hsrmRedDark}
+\setbeamercolor{mpgGreenDark}{fg=mpgGreenDark,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreenDarkDemo}
+	\texttt{mpgGreenDark}
 \end{beamercolorbox}
-\setbeamercolor{hsrmWarmGreyDarkDemo}{fg=hsrmWarmGreyDark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmWarmGreyDarkDemo}
-	\texttt{hsrmWarmGreyDark}
+\setbeamercolor{mpgGreyDarkDemo}{fg=mpgGreyDark,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreyDarkDemo}
+	\texttt{mpgGreyDark}
 \end{beamercolorbox}
-\setbeamercolor{hsrmWarmGreyLightDemo}{fg=hsrmWarmGreyLight,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmWarmGreyLightDemo}
-	\texttt{hsrmWarmGreyLight}
+\setbeamercolor{mpgGreyDemo}{fg=mpgGrey,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreyDemo}
+	\texttt{mpgGrey}
 \end{beamercolorbox}
-
-\setbeamercolor{hsrmRedDemoBg}{fg=white,bg=hsrmRed}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmRedDemoBg}
-	\texttt{hsrmRed}
-\end{beamercolorbox}
-\setbeamercolor{hsrmRedDarkDemoBg}{fg=white,bg=hsrmRedDark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmRedDarkDemoBg}
-	\texttt{hsrmRedDark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmWarmGreyDarkDemo}{fg=white,bg=hsrmWarmGreyDark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmWarmGreyDarkDemo}
-	\texttt{hsrmWarmGreyDark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmWarmGreyLightDemo}{fg=white,bg=hsrmWarmGreyLight}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmWarmGreyLightDemo}
-	\texttt{hsrmWarmGreyLight}
+\setbeamercolor{mpgGreyLightDemo}{fg=mpgGreyLight,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreyLightDemo}
+	\texttt{mpgGreyLight}
 \end{beamercolorbox}
 
+\setbeamercolor{mpgGreenDemoBg}{fg=white,bg=mpgGreen}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreenDemoBg}
+	\texttt{mpgGreen}
+\end{beamercolorbox}
+\setbeamercolor{mpgGreenDarkDemoBg}{fg=white,bg=mpgGreenDark}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreenDarkDemoBg}
+	\texttt{mpgGreenDark}
+\end{beamercolorbox}
+\setbeamercolor{mpgGreyDarkDemo}{fg=white,bg=mpgGreyDark}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreyDarkDemo}
+	\texttt{mpgGreyDark}
+\end{beamercolorbox}
+\setbeamercolor{mpgGreyDemo}{fg=white,bg=mpgGrey}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreyDemo}
+	\texttt{mpgGrey}
+\end{beamercolorbox}
+\setbeamercolor{mpgGreyLightDemo}{fg=white,bg=mpgGreyLight}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreyLightDemo}
+	\texttt{mpgGreyLight}
+\end{beamercolorbox}
 \end{multicols}
 
 \end{frame}
 
-\begin{frame}{Sekundärfarben}
+\begin{frame}{Akzentfarben}
 \begin{multicols}{2}
 
-\setbeamercolor{hsrmSec1Demo}{fg=hsrmSec1,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec1Demo}
-	\texttt{hsrmSec1}
+\setbeamercolor{mpgOrangeDemo}{fg=mpgOrange,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgOrangeDemo}
+	\texttt{mpgOrange}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec1DarkDemo}{fg=hsrmSec1Dark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec1DarkDemo}
-	\texttt{hsrmSec1Dark}
+\setbeamercolor{mpgGreenLightDemo}{fg=mpgGreenLight,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgGreenLightDemo}
+	\texttt{mpgGreenLight}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec1CompDemo}{fg=hsrmSec1Comp,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec1CompDemo}
-	\texttt{hsrmSec1Comp}
+\setbeamercolor{mpgBlueLightDemo}{fg=mpgBlueLight,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgBlueLightDemo}
+	\texttt{mpgBlueLight}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec1CompDarkDemo}{fg=hsrmSec1CompDark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec1CompDarkDemo}
-	\texttt{hsrmSec1CompDark}
-\end{beamercolorbox}
-
-\setbeamercolor{hsrmSec2Demo}{fg=hsrmSec2,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec2Demo}
-	\texttt{hsrmSec2}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2DarkDemo}{fg=hsrmSec2Dark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec2DarkDemo}
-	\texttt{hsrmSec2Dark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2CompDemo}{fg=hsrmSec2Comp,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec2CompDemo}
-	\texttt{hsrmSec2Comp}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2CompDarkDemo}{fg=hsrmSec2CompDark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec2CompDarkDemo}
-	\texttt{hsrmSec2CompDark}
+\setbeamercolor{mpgBlueDarkDemo}{fg=mpgBlueDark,bg=white}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{mpgBlueDarkDemo}
+	\texttt{mpgBlueDark}
 \end{beamercolorbox}
 
-\setbeamercolor{hsrmSec3Demo}{fg=hsrmSec3,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec3Demo}
-	\texttt{hsrmSec3}
+\setbeamercolor{mpgOrangeDemoBg}{fg=white,bg=mpgOrange}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgOrangeDemoBg}
+	\texttt{mpgOrange}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec3DarkDemo}{fg=hsrmSec3Dark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec3DarkDemo}
-	\texttt{hsrmSec3Dark}
+\setbeamercolor{mpgGreenLightDemoBg}{fg=white,bg=mpgGreenLight}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgGreenLightDemoBg}
+	\texttt{mpgGreenLight}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec3CompDemo}{fg=hsrmSec3Comp,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec3CompDemo}
-	\texttt{hsrmSec3Comp}
+\setbeamercolor{mpgBlueLightDemoBg}{fg=white,bg=mpgBlueLight}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgBlueLightDemoBg}
+	\texttt{mpgBlueLight}
 \end{beamercolorbox}
-\setbeamercolor{hsrmSec3CompDarkDemo}{fg=hsrmSec3CompDark,bg=white}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,dp=0.7ex]{hsrmSec3CompDarkDemo}
-	\texttt{hsrmSec3CompDark}
+\setbeamercolor{mpgBlueDarkDemoBg}{fg=white,bg=mpgBlueDark}
+\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{mpgBlueDarkDemoBg}
+	\texttt{mpgBlueDark}
 \end{beamercolorbox}
-
-\setbeamercolor{hsrmSec1DemoBg}{fg=white,bg=hsrmSec1}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec1DemoBg}
-	\texttt{hsrmSec1}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec1DarkDemoBg}{fg=white,bg=hsrmSec1Dark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec1DarkDemoBg}
-	\texttt{hsrmSec1Dark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec1CompDemoBg}{fg=white,bg=hsrmSec1Comp}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec1CompDemoBg}
-	\texttt{hsrmSec1Comp}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec1CompDarkDemoBg}{fg=white,bg=hsrmSec1CompDark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec1CompDarkDemoBg}
-	\texttt{hsrmSec1CompDark}
-\end{beamercolorbox}
-
-\setbeamercolor{hsrmSec2DemoBg}{fg=white,bg=hsrmSec2}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec2DemoBg}
-	\texttt{hsrmSec2}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2DarkDemoBg}{fg=white,bg=hsrmSec2Dark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec2DarkDemoBg}
-	\texttt{hsrmSec2Dark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2CompDemoBg}{fg=white,bg=hsrmSec2Comp}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec2CompDemoBg}
-	\texttt{hsrmSec2Comp}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec2CompDarkDemoBg}{fg=white,bg=hsrmSec2CompDark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec2CompDarkDemoBg}
-	\texttt{hsrmSec2CompDark}
-\end{beamercolorbox}
-
-\setbeamercolor{hsrmSec3Demo}{fg=white,bg=hsrmSec3}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec3Demo}
-	\texttt{hsrmSec3}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec3DarkDemo}{fg=white,bg=hsrmSec3Dark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec3DarkDemo}
-	\texttt{hsrmSec3Dark}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec3CompDemo}{fg=white,bg=hsrmSec3Comp}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec3CompDemo}
-	\texttt{hsrmSec3Comp}
-\end{beamercolorbox}
-\setbeamercolor{hsrmSec3CompDarkDemo}{fg=white,bg=hsrmSec3CompDark}
-\begin{beamercolorbox}[wd=\linewidth,ht=2ex,leftskip=.5ex,dp=0.7ex]{hsrmSec3CompDarkDemo}
-	\texttt{hsrmSec3CompDark}
-\end{beamercolorbox}
-
+%
 \end{multicols}
 \end{frame}
 
@@ -341,14 +279,10 @@ In der Beamer Klasse ist die Funktion \lstinline!\alert! definiert, um einzelne 
 \begin{itemize}
 	\item \alert{hervorgehobener Text}
 \end{itemize}
-Zusätzlich sind im HSRM Theme noch \lstinline!\quoted! und \lstinline!\doublequoted! definiert, um die Anführungszeichen des Corporate Designs der Hochschule einfach im Zugriff zu haben. Beispiele:
-\begin{itemize}
-	\item[] \quoted{Einfache Anführungszeichen}
-	\item[] \doublequoted{Doppelte Anführungszeichen}
-\end{itemize}
 \end{frame}
 
 \subsection{Blockstrukturen}
+
 \begin{frame}[containsverbatim]{Einfacher Block mit Aufzählung}
 Zur Strukturierung sind in Beamer Blockumgebungen definiert.
 \begin{block}{Block mit einer Aufzählung}
@@ -389,24 +323,6 @@ Ein Example Block wird mit der ersten Sekundärfarbe eingefärbt.
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[containsverbatim]{Block mit anderer Farbe}
-\begingroup
-\setbeamercolor{block title}{bg=hsrmSec2Dark}
-\setbeamercolor{block body}{bg=hsrmSec2}
-\begin{block}{Block mit anderer Farbe}
-	In diesem Block wird eine weitere Sekundärfarbe verwendet.
-\end{block}
-\endgroup
-\begin{lstlisting}
-\begingroup
-\setbeamercolor{block title}{bg=hsrmSec2Dark}
-\setbeamercolor{block body}{bg=hsrmSec2}
-\begin{block}{Block mit anderer Farbe}
-	In diesem Block wird ...
-\end{block}
-\endgroup
-\end{lstlisting}
-\end{frame}
 
 \section{Beispielfolien}
 \begin{frame}{Weitere Beispiele}
@@ -418,7 +334,7 @@ Schauen Sie einfach in den Quelltext, um zu sehen wie die Folien erstellt wurden
 \begin{frame}{Foto mit Copyright}
 	\begin{figure}
 		\centering
-		\includegraphicscopyright[width=\linewidth]{photo.jpg}{Copyright by \href{http://netzlemming.deviantart.com/}{Netzlemming}, \href{http://creativecommons.org/licenses/by-nc/3.0/}{CC BY-NC 3.0 License}}
+		\includegraphicscopyright[height=5cm]{photo.jpg}{Copyright by \href{http://netzlemming.deviantart.com/}{Netzlemming}, \href{http://creativecommons.org/licenses/by-nc/3.0/}{CC BY-NC 3.0 License}}
 	\end{figure}
 \end{frame}
 \begin{frame}{Plot mit Beschriftung}
@@ -461,19 +377,6 @@ F(\textrm{j}\omega) = \int\limits_{-\infty}^{\infty} f(t)\cdot\textrm{e}^{-\text
 	n! = 1\cdot 2 \cdot 3 \cdot\ldots\cdot n = \prod_{k=1}^n k
 \end{equation*}
 \end{block}
-\end{frame}
-
-\begin{frame}{Mindmap mit TikZ}
-\centering
-\begin{tikzpicture}[scale=0.88]
-	%\tikzset{every child/.append style={level distance=250}}
-	\path[mindmap,concept color=hsrmWarmGreyLight,text=hsrmWarmGreyDark]
-	node[concept] {\TeX}
-	[clockwise from=-30]
-	child[concept color=hsrmSec2Dark,text=white] { node[concept] {\textcolor{white}{\XeTeX}} }
-	child[concept color=hsrmSec1CompDark,text=white] { node[concept] {\ConTeXt} }
-	child[concept color=hsrmSec1Dark,text=white] { node[concept] {\LaTeX} };
-\end{tikzpicture}
 \end{frame}
 
 \subsection{Fußnoten}
@@ -530,31 +433,25 @@ F(\textrm{j}\omega) = \int\limits_{-\infty}^{\infty} f(t)\cdot\textrm{e}^{-\text
 	\beamertemplatebookbibitems
 	\bibitem{Oppenheim2009}
 	Alan~V.~Oppenheim
-	\newblock \doublequoted{Discrete-Time Signal Processing}
+	\newblock Discrete-Time Signal Processing
 	\newblock Prentice Hall Press, 2009
 
 	\beamertemplatearticlebibitems
 	\bibitem{EBU2011}
 	European~Broadcasting~Union
-	\newblock \doublequoted{Specification of the Broadcast Wave Format (BWF)}
+	\newblock Specification of the Broadcast Wave Format (BWF)
 	\newblock 2011
   \end{thebibliography}
 \end{frame}
 
-\section{Ausblick}
-\begin{frame}{Bekannte Fehler}
-	\begin{itemize}
-		\item Theme ist momentan noch in einer einzelnen sty-Datei. Diese sollte unterteilt werden in einzelne Dateien für Schrift, Farbe usw.
-	\end{itemize}
-\end{frame}
 
-\begin{frame}{Fragen, Anmerkungen, Kontakt}
-	Das HSRM Theme steht unter der \quoted{GNU Public License}. Es darf also weitergegeben und modifiziert werden, sofern die Lizenzart beibehalten wird.
+\begin{frame}{Anmerkungen}
+	Das MPIMG Theme hat anders als die PowerPoint-Vorlagen nur eine Titelseite, es fehlen auch Danksagungsseiten und solche mit großformatigen Bildern als Hintergrund. Ergänzungen und Verbesserungen sind jederzeit willkommen.
 	
-	Für Fragen und Anmerkungen stehe ich gerne zur Verfügung.
-	\begin{itemize}
-		\item \url{Benjamin.Weiss@student.hs-rm.de}
-	\end{itemize}
+	Das Theme steht unter der „GNU Public License“. Es darf also weitergegeben und modifiziert werden, sofern die Lizenzart beibehalten wird.
+	
+	Es basiert auf dem Theme „HSRM Beamer Theme“ von Benjamin Weiss (Hochschule Rhein-Main).
+
 \end{frame}
 
 \end{document}
